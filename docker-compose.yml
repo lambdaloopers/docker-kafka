@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  zookeeper:
+    image: lambdaloopers/zookeeper:3.4.6
+    restart: ${RESTART_SERVICE}
+
+  kafka:
+    image: lambdaloopers/kafka:1.1.0
+    restart: ${RESTART_SERVICE}
+    networks:
+      - network
+      - default
+    environment:
+      KAFKA_LOG_DIRS: "/kafka/kafka-logs"
+      KAFKA_ADVERTISED_HOST_NAME: ${KAFKA_ADVERTISED_HOST}
+      KAFKA_ADVERTISED_PORT: ${KAFKA_PORT}
+      KAFKA_ZOOKEEPER_CONNECT: ${ZOOKEEPER_HOST}:${ZOOKEEPER_PORT}
+      KAFKA_LOG_RETENTION_HOURS: ${KAFKA_LOG_RETENTION_HOURS}
+      JMX_PORT: ${JMX_PORT}
+    volumes:
+      - ./data/kafka:/kafka
+
+networks:
+  network:
+    driver: bridge

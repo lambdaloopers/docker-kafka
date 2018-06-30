@@ -1,0 +1,11 @@
+### IntelIJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Storage ###
+data
+
+### Environment ###
+.env
