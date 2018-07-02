@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Download and install the docker-compose binary
+curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
+sudo rm -rf /usr/local/bin/docker-compose;
+sudo mv /tmp/docker-compose /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Add the docker repository and install the latest docker-ce version
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get -y install docker-ce
+sudo service docker restart
+
+# Add the user to the docker group, you'll need to restart your session once it's done!
+sudo groupadd docker
+sudo usermod -aG docker $USER
