@@ -2,11 +2,11 @@
 
 Kafka Queue implementation with Zookeeper group management.
 
-https://www.slideshare.net/lambdaloopers/kafka-infrastructure-development
-https://www.slideshare.net/lambdaloopers/kafka-infrastructure-production
-https://www.slideshare.net/lambdaloopers/kafka-infrastructure-services
-https://www.slideshare.net/lambdaloopers/kafka-infrastructure-monitoring
-https://www.slideshare.net/lambdaloopers/kafka-infrastructure-cloud
+* https://www.slideshare.net/lambdaloopers/kafka-infrastructure-development
+* https://www.slideshare.net/lambdaloopers/kafka-infrastructure-production
+* https://www.slideshare.net/lambdaloopers/kafka-infrastructure-services
+* https://www.slideshare.net/lambdaloopers/kafka-infrastructure-monitoring
+* https://www.slideshare.net/lambdaloopers/kafka-infrastructure-cloud
 
 ## Getting Started
 
